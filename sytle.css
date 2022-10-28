@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+button {
+    margin-top: 25px;
+}
+
+#big-container {
+    width: 352px;
+    margin-top: 50px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    border:1px solid black;
+    width: 20px;
+    height: 20px;
+    flex: none;
+}
+
+.colored {
+    background-color:rgba(0, 0, 0, 0.324);
+}
+
+#clear {
+    margin-right: 10px;
+}
