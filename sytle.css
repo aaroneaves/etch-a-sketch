@@ -1,13 +1,14 @@
 body {
-    margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;   
+    background-image: url("sand-pic.jpg");
 }
 
 button {
-    margin-top: 25px;
+    margin-top: 125px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 #big-container {
@@ -17,25 +18,21 @@ button {
 #container {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid blue;
+    border: 1px solid black;
     padding: 0px;
     width: 500px;
     height: 500px;
-    /*gap: 0px;*/
+    background-color: white;
 }
 
 .box {
-    border:1px solid black;
-    width: 48px;
-    height: 48px;
-    /*flex: none;*/
-    /*margin: 0px;*/
+    border:1px solid rgba(128, 128, 128, 0.1);
 }
 
 .colored {
-    background-color:rgba(0, 0, 0, 0.324);
+    background-color:rgba(128, 128, 128, 0.4);
 }
 
 #clear {
-    margin-right: 10px;
+    margin-right: 20px;
 }
