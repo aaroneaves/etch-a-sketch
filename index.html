@@ -24,7 +24,7 @@
 
         const container = document.querySelector('#container');
        
-        for (let i = 0; i < 256; i ++){
+        for (let i = 0; i < 100; i ++){
             const div = document.createElement("div");
             div.classList.add('box');
             container.appendChild(div);
@@ -47,12 +47,24 @@
         }
 
         let answer;
-        
+
         resizeButton = document.querySelector('#resize');
-        resizeButton.addEventListener('click', resizeGrid);
+        resizeButton.addEventListener('click', promptUser);
         
-        function resizeGrid() {
-            answer = prompt('How big do you want your grid, my dude?');
+        function promptUser() {
+            answer = prompt('How many lines do you want for your grid?\r\nMax: 100');
+            answer = parseInt(answer);
+            if (answer < 1){
+                alert('You must pick a larger number');
+            } else if (isNaN(answer)){
+                alert('You must pick a number.');
+            } else {
+                resizeGrid;
+            }
+        }
+
+        function resizeGrid () {
+
         }
         
 
