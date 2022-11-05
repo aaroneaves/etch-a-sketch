@@ -30,10 +30,10 @@ button {
     border:1px solid rgba(128, 128, 128, 0.1);
 }
 
-.colored {
-    background-color:rgba(128, 128, 128, 0.4);
-}
+/*.colored {
+    background-color:#80808066;
+}*/
 
-#clear {
-    margin-right: 20px;
+button {
+    margin-right: 15px;
 }

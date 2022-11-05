@@ -12,6 +12,9 @@
     <div id="btnContainer">
         <button id="clear">Clear Grid</button>
         <button id="resize">Resize Grid</button>
+        <button id="normal">Normal Mode</button>
+        <button id="rainbow">Rainbow Mode</button>
+
     </div>
 
     <div id="big-container">
@@ -22,6 +25,24 @@
         let answer = 10;
         let boxSize = 48;
         let boxList;
+        let normalMode = true;
+        let rainbowMode;
+
+        const normalButton = document.querySelector('#normal');
+        normalButton.addEventListener('click', () => {
+            normalMode = true;
+            rainbowMode = false;
+        });
+
+        const rainbowButton = document.querySelector('#rainbow');
+        rainbowButton.addEventListener('click', () => {
+            normalMode = false;
+            rainbowMode = true;  
+        });
+
+
+        let colors = ['red', 'blue', 'green', 'yellow'];
+        let random_color;
 
         const container = document.querySelector('#container');
        
@@ -37,7 +58,13 @@
             boxList = document.querySelectorAll('.box');
             boxList.forEach((item) => {
                 item.addEventListener('mouseover', (event) => {
-                    item.classList.add('colored');
+                    if (normalMode) {
+                        item.style.backgroundColor = '#80808066';
+                    } else if (rainbowMode) {
+                        random_color = colors[Math.floor(Math.random() * colors.length)];
+                        item.style.backgroundColor = random_color;
+                    }
+   
                 });
             });
         }
@@ -49,7 +76,7 @@
 
         function removeColored() {
             boxList.forEach((item) => {
-                item.classList.remove('colored');
+                item.style.backgroundColor = null;
             });
         }
 
