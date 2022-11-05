@@ -66,6 +66,7 @@
                 div.classList.add('box');
                 div.style.height = boxSize + "px";
                 div.style.width = boxSize + "px";
+                //div.style.backgroundColor = '#FFFFFF';
                 container.appendChild(div);
             }   
             boxList = document.querySelectorAll('.box');
@@ -77,8 +78,27 @@
                         random_color = Math.floor(Math.random() * 16777215).toString(16);
                         item.style.backgroundColor = '#' + random_color;
                     } else if (darkenMode) {
-                        item.style.backgroundColor = '#000000';
-                        //this is just a holder currently
+                        if (item.style.backgroundColor == 'rgb(255, 255, 255)') {
+                            item.style.backgroundColor = 'rgb(225, 225, 225)';
+                        } else if (item.style.backgroundColor == 'rgb(225, 225, 225)') {
+                            item.style.backgroundColor = 'rgb(200, 200, 200)';
+                        } else if (item.style.backgroundColor == 'rgb(200, 200, 200)') {
+                            item.style.backgroundColor = 'rgb(175, 175, 175)';
+                        } else if (item.style.backgroundColor == 'rgb(175, 175, 175)') {
+                            item.style.backgroundColor = 'rgb(150, 150, 150)';
+                        } else if (item.style.backgroundColor == 'rgb(150, 150, 150)') {
+                            item.style.backgroundColor = 'rgb(125, 125, 125)';
+                        } else if (item.style.backgroundColor == 'rgb(125, 125, 125)') {
+                            item.style.backgroundColor = 'rgb(100, 100, 100)';
+                        } else if (item.style.backgroundColor == 'rgb(100, 100, 100)') {
+                            item.style.backgroundColor = 'rgb(75, 75, 75)';
+                        } else if (item.style.backgroundColor == 'rgb(75, 75, 75)') {
+                            item.style.backgroundColor = 'rgb(50, 50, 50)';
+                        } else if (item.style.backgroundColor == 'rgb(50, 50, 50)') {
+                            item.style.backgroundColor = 'rgb(25, 25, 25)';
+                        } else if (item.style.backgroundColor == 'rgb(25, 25, 25)') {
+                            item.style.backgroundColor = 'rgb(0, 0, 0)';
+                        }
                     }
    
                 });
@@ -92,7 +112,7 @@
 
         function removeColored() {
             boxList.forEach((item) => {
-                item.style.backgroundColor = null;
+                item.style.backgroundColor = '#FFFFFF';
             });
         }
 
