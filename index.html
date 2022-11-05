@@ -14,6 +14,8 @@
         <button id="resize">Resize Grid</button>
         <button id="normal">Normal Mode</button>
         <button id="rainbow">Rainbow Mode</button>
+        <button id="darken">Darken Mode</button>
+
 
     </div>
 
@@ -27,21 +29,32 @@
         let boxList;
         let normalMode = true;
         let rainbowMode;
+        let darkenMode;
 
         const normalButton = document.querySelector('#normal');
         normalButton.addEventListener('click', () => {
+            if (!normalMode) removeColored();
             normalMode = true;
             rainbowMode = false;
+            darkenMode = false;
         });
 
         const rainbowButton = document.querySelector('#rainbow');
         rainbowButton.addEventListener('click', () => {
+            if (!rainbowMode) removeColored();
             normalMode = false;
-            rainbowMode = true;  
+            rainbowMode = true; 
+            darkenMode = false; 
         });
 
+        const darkenButton = document.querySelector('#darken');
+        darkenButton.addEventListener('click', () => {
+            if (!darkenMode) removeColored();
+            normalMode = false;
+            rainbowMode = false; 
+            darkenMode = true;
+        });
 
-        let colors = ['red', 'blue', 'green', 'yellow'];
         let random_color;
 
         const container = document.querySelector('#container');
@@ -61,8 +74,11 @@
                     if (normalMode) {
                         item.style.backgroundColor = '#80808066';
                     } else if (rainbowMode) {
-                        random_color = colors[Math.floor(Math.random() * colors.length)];
-                        item.style.backgroundColor = random_color;
+                        random_color = Math.floor(Math.random() * 16777215).toString(16);
+                        item.style.backgroundColor = '#' + random_color;
+                    } else if (darkenMode) {
+                        item.style.backgroundColor = '#000000';
+                        //this is just a holder currently
                     }
    
                 });
